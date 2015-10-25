@@ -119,6 +119,7 @@
         <li><a href="#values">values</a></li>
         <li><a href="#pairs-to-obj">pairs-to-obj</a></li>
         <li><a href="#obj-to-pairs">obj-to-pairs</a></li>
+        <li><a href="#fold-obj-to-list">fold-obj-to-list</a></li>
         <li><a href="#lists-to-obj">lists-to-obj</a></li>
         <li><a href="#obj-to-lists">obj-to-lists</a></li>
         <li><a href="#obj-empty">empty</a></li>
@@ -931,6 +932,16 @@ pairs-to-obj [['a' 'b'] ['c' 'd'] ['e' 1]] #=> {a: 'b', c: 'd', e: 1}
         <p>Takes an object and returns a list of pairs.
 <pre class="prettyprint example lang-ls">
 obj-to-pairs {a: 'b', c: 'd', e: 1} #=> [['a', 'b'], ['c', 'd'], ['e', 1]]
+</pre>
+      </div>
+
+      <div id="fold-obj-to-list" class="func">
+        <a href="#fold-obj-to-list" class="func-name">fold-obj-to-list</a>
+        <div class="func-type">(a &rarr; b &rarr; c) &rarr; {a: b} &rarr; [c]</div>
+        <p>Folds the keys and the values of the object into a list.
+<pre class="prettyprint example lang-ls">
+fold-obj-to-list ((k, v) -> "#k": v), {a: 'b', c: 'd', e: 1} 
+  #=> [{a: 'b'}, {c: 'd'}, {e: 1}]
 </pre>
       </div>
 
